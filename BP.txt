@@ -1,0 +1,78 @@
+//---------------------------------------------------------------------------
+// File name:   bankingproject1.cpp
+// Assign ID:   dburke4 
+// Due Date:    03/07/21 
+//
+// Purpose:     
+//
+// Author:      dburke4 Deyandra Burke
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+ int Savings, Checking, Sdeposit, Cdeposit, Sbalance, Cbalance, option;
+ string username, password;
+
+ Savings = 2500;
+ Checking = 35;
+
+   cout << "Welcome to Our ATM, please enter your username." << endl;
+   cin >> username;
+   cout << "Please enter your password" << endl;
+   cin >> password;
+
+   if (username == "rbrown"){  
+      if (password == "blue123"){
+        cout << "Login successful." << endl;  
+          
+do
+ {
+    
+   cout << "\n\t********** Menu **********";
+   cout << "\n\t*                        *";
+   cout << "\n\t*   1. Checking Account  *";
+   cout << "\n\t*   2. Savings Account   *";
+   cout << "\n\t*                        *";
+   cout << "\n\t**************************";
+   cout << "\n\t  Please Choose an option ";
+   cin >> option;
+
+   switch (option)
+   {
+   case 1: cout << "Your balance is: $" << Checking << endl;
+          cout << "Amount you would like to deposit: ";
+          cin >> Cdeposit;
+          Cbalance = Checking + Cdeposit;
+          cout << "\n\t Current Checking Account balance is: $" << Cbalance << endl;
+           break;
+           
+   case 2: cout << "Your balance is: $" << Savings << endl;
+          cout << "Amount you would like to deposit: ";
+          cin >> Sdeposit;
+          Sbalance = Savings + Sdeposit;
+          cout << "\n\t Current Savings Account balance is: $" << Sbalance << endl;
+           break;
+           
+   default: if(option != 2)
+                cout << "Invaild option. Please try again" << endl;
+  
+       break;
+    } 
+      
+ } while (option != 2);
+      } else{
+            cout << "Invalid password. " << endl;
+      }
+      } else{
+        cout << endl << "Invalid username, try again. " << endl;
+        } 
+
+
+    return 0;
+
+}//main
